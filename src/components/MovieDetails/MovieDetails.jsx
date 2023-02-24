@@ -49,7 +49,6 @@ const MovieDetails = () => {
     return (
       <>
         <StyledWrapper>
-          {console.log(movie)}
           <div className="image__wrapper">
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

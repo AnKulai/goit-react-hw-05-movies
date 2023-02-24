@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyledLink, StyledMovieCard } from './MovieTrendCards.styled';
+import { PropTypes } from 'prop-types';
 
-const MovieCard = ({ movie, putMovieID }) => {
+const MovieCard = ({ movie }) => {
   const { id, backdrop_path, title, name } = movie;
   // Fix API title bug
   let correctTitle = title || name;
@@ -10,13 +11,9 @@ const MovieCard = ({ movie, putMovieID }) => {
     correctTitle = correctTitle.slice(0, 26).concat('...');
   }
 
-  const handleMovieDetails = () => {
-    putMovieID(id);
-  };
-
   return (
     <StyledLink to={`/movies/${id}`}>
-      <StyledMovieCard onClick={handleMovieDetails}>
+      <StyledMovieCard>
         <img
           src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}
           alt="photos"
@@ -27,6 +24,15 @@ const MovieCard = ({ movie, putMovieID }) => {
       </StyledMovieCard>
     </StyledLink>
   );
+};
+
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    backdrop_path: PropTypes.string.isRequired,
+    title: PropTypes.string,
+    name: PropTypes.string,
+  }).isRequired,
 };
 
 export default MovieCard;

@@ -1,6 +1,5 @@
 import svg from '../../images/sprtite.svg';
 import React from 'react';
-import PropTypes from 'prop-types';
 import { StyledButton } from './GoBackButton.styled';
 
 const GoBackButton = () => {

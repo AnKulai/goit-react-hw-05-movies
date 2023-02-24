@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyledCredits } from './CreditCard.styled';
+import { PropTypes } from 'prop-types';
 
 const CreditCard = ({ cast: { profile_path, name, character } }) => {
   // Cast card markup
@@ -19,6 +20,14 @@ const CreditCard = ({ cast: { profile_path, name, character } }) => {
       )}
     </>
   );
+};
+
+CreditCard.propTypes = {
+  cast: PropTypes.shape({
+    profile_path: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    character: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default CreditCard;

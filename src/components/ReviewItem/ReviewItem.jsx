@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyledLi } from './ReviewItem.styled';
+import { PropTypes } from 'prop-types';
 
-const ReviewItem = ({ author }) => {
-  const { author_details, content } = author;
+const ReviewItem = ({ author: { author_details, content } }) => {
 
   if (author_details.avatar_path === null) return;
 
@@ -37,6 +37,18 @@ const ReviewItem = ({ author }) => {
       </div>
     </StyledLi>
   );
+};
+
+ReviewItem.propTypes = {
+  author: PropTypes.shape({
+    author_details: PropTypes.shape({
+      avatar_path: PropTypes.string,
+      name: PropTypes.string,
+      username: PropTypes.string,
+      rating: PropTypes.number,
+    }),
+    content: PropTypes.string.isRequired,
+  }),
 };
 
 export default ReviewItem;
