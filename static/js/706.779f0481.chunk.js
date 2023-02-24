@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[706],{7706:function(n,e,t){t.r(e),t.d(e,{default:function(){return u}});t(2791);var r,i=t(168),c=t(6444).ZP.div(r||(r=(0,i.Z)(["\n  width: 100%;\n  max-width: 1200px;\n  margin: auto;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-direction: column;\n"]))),a=t(184),u=function(n){var e=n.children;return(0,a.jsx)(c,{children:e})}}}]);
+//# sourceMappingURL=706.779f0481.chunk.js.map
